@@ -1,3 +1,7 @@
+// DBConnection
+// Connect to MySQL
+// by Marco Marchesi, 2/3/2016
+
 using UnityEngine;
 using MySql.Data;
 using MySql.Data.MySqlClient;
@@ -10,8 +14,6 @@ using System.Collections.Generic;
 public class DBConnection: MonoBehaviour
 {
 
-    bool saving = false;
-    bool loading = false;
     // MySQL instance specific items
 	string constr = "Server=217.114.212.5;Database=thisisma_colopl_test;User ID=thisi_colopl;Password=colopl_testing_2357;Pooling=true";
     // connection object
@@ -30,9 +32,12 @@ public class DBConnection: MonoBehaviour
 		public int rate;
     }
     // collection container
-    List<data> _Items;
+	private List<data> _Items = new List<data> ();
     void Awake()
     {
+
+		_Items = new List<data>();
+
         try
         {
             // setup the connection element
@@ -59,46 +64,10 @@ public class DBConnection: MonoBehaviour
             connection.Dispose();
         }
     }
-
-    // Use this for initialization
-    void Start()
-    {
-		_Items = new List<data>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
-    // gui event like a button, etc
-    void OnGUI()
-    {
-        if (GUI.Button(new Rect(10, 70, 50, 30), "Save") && !saving)
-        {
-            saving = true;
-            // first lets clean out the databae
-            // now lets save the scene information
-            Insert("nick","Did you like the game?",4);
-            // you could also use the update if you know the ID of the item already saved
-
-            saving = false;
-        }
-        if (GUI.Button(new Rect(10, 110, 50, 30), "Load") && !loading)
-        {
-            loading = true;
-            // lets read the items from the database
-            Read();
-            // now display what is known about them to our log
-//            LogItems();
-            loading = false;
-        }
-    }
+		
 
     // Insert new entries into the table
-	void Insert(string user,string question,int rate)
+	public void Insert(string user,string question,int rate)
     {
 		data item = new data();
 		item.user = user;
@@ -142,14 +111,14 @@ public class DBConnection: MonoBehaviour
 		
 
     // Read all entries from the table
-    void Read()
+    public void Read()
     {
         string query = string.Empty;
         if (_Items == null)
             _Items = new List<data>();
         if (_Items.Count > 0)
             _Items.Clear();
-        // Error trapping in the simplest form
+        
         try
         {
             query = "SELECT * FROM survey";

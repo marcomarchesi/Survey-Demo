@@ -76,6 +76,7 @@
      <Compile Include="Assets\Cardboard\Scripts\VRDevices\CardboardiOSDevice.cs" />
      <Compile Include="Assets\Cardboard\Scripts\VRDevices\UnityEditorDevice.cs" />
      <Compile Include="Assets\Survey\DBConnection.cs" />
+     <Compile Include="Assets\Survey\StarHandler.cs" />
      <Compile Include="Assets\Survey\SurveyManager.cs" />
      <None Include="Assets\Cardboard\Resources\SkyboxMesh.shader" />
      <None Include="Assets\Cardboard\Distortion\CardboardDistortion.cginc" />
@@ -89,14 +90,14 @@
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
- <Reference Include="System.Drawing">
- <HintPath>/Users/marcomarchesi/Desktop/Colopl_NI/Survey_demo/Assets/Plugins/System.Drawing.dll</HintPath>
- </Reference>
  <Reference Include="MySql.Data">
  <HintPath>/Users/marcomarchesi/Desktop/Colopl_NI/Survey_demo/Assets/Plugins/MySql.Data.dll</HintPath>
  </Reference>
  <Reference Include="System.Data">
  <HintPath>/Users/marcomarchesi/Desktop/Colopl_NI/Survey_demo/Assets/Plugins/System.Data.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Drawing">
+ <HintPath>/Users/marcomarchesi/Desktop/Colopl_NI/Survey_demo/Assets/Plugins/System.Drawing.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
