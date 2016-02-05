@@ -104,7 +104,7 @@ public class GazeInputModule : PointerInputModule
 
 				ExecuteEvents.ExecuteHierarchy(currentLookAtHandler, pointerEventData, ExecuteEvents.pointerClickHandler);
 				currentLookAtHandlerClickTime = float.MaxValue;
-							ExecuteEvents.ExecuteHierarchy(EventSystem.current.currentSelectedGameObject, pointerEventData, ExecuteEvents.deselectHandler);
+							//ExecuteEvents.ExecuteHierarchy(EventSystem.current.currentSelectedGameObject, pointerEventData, ExecuteEvents.deselectHandler);
 			}
 		}
 		else

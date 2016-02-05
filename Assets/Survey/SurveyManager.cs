@@ -91,31 +91,31 @@ public class SurveyManager: MonoBehaviour
                 case 2:
                     {
                         rate = 2;
-                        star1.Select();
+                        //star1.Select();
                     }
                     break;
                 case 3:
                     {
                         rate = 3;
-                    star1.Select();
-                    star2.Select();
+                    //star1.Select();
+                    //star2.Select();
                 }
                     break;
                 case 4:
                     {
                         rate = 4;
-                    star1.Select();
-                    star2.Select();
-                    star3.Select();
+                    //star1.Select();
+                    //star2.Select();
+                    //star3.Select();
                 }
                     break;
                 case 5:
                     {
                         rate = 5;
-                    star1.Select();
-                    star2.Select();
-                    star3.Select();
-                    star4.Select();
+                    //star1.Select();
+                    //star2.Select();
+                    //star3.Select();
+                    //star4.Select();
                 }
                 break;
                 default:
