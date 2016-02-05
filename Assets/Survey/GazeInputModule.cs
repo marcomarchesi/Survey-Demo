@@ -1,13 +1,8 @@
-﻿// Based on the Gaze Input Module by Peter Koch <peterept@gmail.com>
+﻿// Based on the Gaze Input Module by Peter Koch
 using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 
-// To use:
-// 1. Drag onto your EventSystem game object.
-// 2. Disable any other Input Modules (eg: StandaloneInputModule & TouchInputModule) as they will fight over selections.
-// 3. Make sure your Canvas is in world space and has a GraphicRaycaster (should by default).
-// 4. If you have multiple cameras then make sure to drag your VR (center eye) camera into the canvas.
 public class GazeInputModule : PointerInputModule 
 {
 	public enum Mode { Click = 0, Gaze };
@@ -60,23 +55,23 @@ public class GazeInputModule : PointerInputModule
             {
                 if (handler.name == "1-star")
                 {
-                    survey.Stars(1);
+                    survey.SetRate(1);
                 }
                 else if (handler.name == "2-star")
                 {
-                    survey.Stars(2);  
+                    survey.SetRate(2);  
                 }
                 else if (handler.name == "3-star")
                 {
-                    survey.Stars(3);
+                    survey.SetRate(3);
                 }
                 else if (handler.name == "4-star")
                 {
-                    survey.Stars(4);
+                    survey.SetRate(4);
                 }
                 else if (handler.name == "5-star")
                 {
-                    survey.Stars(5);
+                    survey.SetRate(5);
                 }
 
             }
@@ -94,17 +89,17 @@ public class GazeInputModule : PointerInputModule
 			    (mode == Mode.Gaze && Time.realtimeSinceStartup > currentLookAtHandlerClickTime) || 
 			    (mode == Mode.Click && Input.GetButtonDown(ClickInputName)))
 			{
-				if (EventSystem.current.currentSelectedGameObject != null)
-				{
-					//print ("old" + EventSystem.current.currentSelectedGameObject.name);
-		//			ExecuteEvents.ExecuteHierarchy(EventSystem.current.currentSelectedGameObject, pointerEventData, ExecuteEvents.deselectHandler);
-				}
+				//if (EventSystem.current.currentSelectedGameObject != null)
+				//{
+				//	//print ("old" + EventSystem.current.currentSelectedGameObject.name);
+    //            //ExecuteEvents.ExecuteHierarchy(EventSystem.current.currentSelectedGameObject, pointerEventData, ExecuteEvents.deselectHandler);
+				//}
 
 				EventSystem.current.SetSelectedGameObject(currentLookAtHandler);
 
 				ExecuteEvents.ExecuteHierarchy(currentLookAtHandler, pointerEventData, ExecuteEvents.pointerClickHandler);
 				currentLookAtHandlerClickTime = float.MaxValue;
-							//ExecuteEvents.ExecuteHierarchy(EventSystem.current.currentSelectedGameObject, pointerEventData, ExecuteEvents.deselectHandler);
+				//ExecuteEvents.ExecuteHierarchy(EventSystem.current.currentSelectedGameObject, pointerEventData, ExecuteEvents.deselectHandler);
 			}
 		}
 		else
