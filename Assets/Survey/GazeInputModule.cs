@@ -46,10 +46,6 @@ public class GazeInputModule : PointerInputModule
 		{
 			// if the ui receiver has changed, reset the gaze delay timer
 			GameObject handler = ExecuteEvents.GetEventHandler<IPointerClickHandler>(pointerEventData.pointerEnter);
-
-
-            // Check the current highlighted sta
-            SurveyManager survey = (SurveyManager)GameObject.Find("Survey Canvas").GetComponent(typeof(SurveyManager));
             
 
 			if (currentLookAtHandler != handler)

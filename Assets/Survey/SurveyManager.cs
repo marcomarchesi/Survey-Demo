@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.EventSystems;
 
 public class SurveyManager: MonoBehaviour 
 {
@@ -25,8 +24,6 @@ public class SurveyManager: MonoBehaviour
 	private int questionIndex;
 	private int rate;
 
-    private EventSystem eventSystem;
-
 	private Sprite gold_star;
 	private Sprite gray_star;
 
@@ -42,7 +39,6 @@ public class SurveyManager: MonoBehaviour
 	void Start() {
 
 		surveyCanvas = GameObject.Find("Survey Canvas").GetComponent<Canvas>();
-        eventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
 
 		//instance db
 		db = surveyCanvas.gameObject.AddComponent<DBConnection>() as DBConnection;
