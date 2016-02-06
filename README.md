@@ -1,5 +1,6 @@
 # Survey-Demo
 
-Gaze pointer
-- on click <space bar>
+Gaze pointer can select in two ways (check GazeInputModule in EventSystem object):
+- on click `space`
 - after 2 seconds
+
