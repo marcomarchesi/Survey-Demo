@@ -27,6 +27,9 @@ public class SurveyManager: MonoBehaviour
 
     private EventSystem eventSystem;
 
+	private Sprite gold_star;
+	private Sprite gray_star;
+
 
     // some sounds
     private AudioSource star_wav;
@@ -43,6 +46,9 @@ public class SurveyManager: MonoBehaviour
 
 		//instance db
 		db = surveyCanvas.gameObject.AddComponent<DBConnection>() as DBConnection;
+
+		gold_star = Resources.Load <Sprite>("star");
+		gray_star = Resources.Load <Sprite>("gray_star");
 
 		// my rating stars
 		star1 = GameObject.Find ("1-star").GetComponent<Button> ();
@@ -81,10 +87,50 @@ public class SurveyManager: MonoBehaviour
 
     }
 
-    public void SetRate(int star)
-    {
-        rate = star;
-    }
+	public void OneStars(){
+		star1.image.sprite = gold_star;
+		rate = 1;
+	}
+
+	public void TwoStars(){
+		star1.image.sprite = gold_star;
+		star2.image.sprite = gold_star;
+		rate = 2;
+	}
+
+	public void ThreeStars(){
+		star1.image.sprite = gold_star;
+		star2.image.sprite = gold_star;
+		star3.image.sprite = gold_star;
+		rate = 3;
+	}
+
+	public void FourStars(){
+		star1.image.sprite = gold_star;
+		star2.image.sprite = gold_star;
+		star3.image.sprite = gold_star;
+		star4.image.sprite = gold_star;
+		rate = 4;
+	}
+
+	public void FiveStars(){
+		star1.image.sprite = gold_star;
+		star2.image.sprite = gold_star;
+		star3.image.sprite = gold_star;
+		star4.image.sprite = gold_star;
+		star5.image.sprite = gold_star;
+		rate = 5;
+	}
+
+	public void DeselectStars()
+	{
+		star1.image.sprite = gray_star;
+		star2.image.sprite = gray_star;
+		star3.image.sprite = gray_star;
+		star4.image.sprite = gray_star;
+		star5.image.sprite = gray_star;
+	}
+		
 
     public void SelectRate()
     {

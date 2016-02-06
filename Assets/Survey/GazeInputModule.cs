@@ -50,31 +50,6 @@ public class GazeInputModule : PointerInputModule
 
             // Check the current highlighted sta
             SurveyManager survey = (SurveyManager)GameObject.Find("Survey Canvas").GetComponent(typeof(SurveyManager));
-
-            if (handler)
-            {
-                if (handler.name == "1-star")
-                {
-                    survey.SetRate(1);
-                }
-                else if (handler.name == "2-star")
-                {
-                    survey.SetRate(2);  
-                }
-                else if (handler.name == "3-star")
-                {
-                    survey.SetRate(3);
-                }
-                else if (handler.name == "4-star")
-                {
-                    survey.SetRate(4);
-                }
-                else if (handler.name == "5-star")
-                {
-                    survey.SetRate(5);
-                }
-
-            }
             
 
 			if (currentLookAtHandler != handler)
